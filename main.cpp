@@ -53,7 +53,7 @@ int main() {
     gradeAverage = (firstGrade + static_cast<double>(secondGrade)+thirdGrade)/(3.0); //Average expression, static type cast
     //as extra redundancy to ensure the data type gets converted to a double
 
-    cout<<"The average for "<<firstName<<lastName<<" is: "<<setprecision(1)<<gradeAverage<<endl; //when array solution is implemented the output variable will
+    cout<<"The average for "<<firstName<<" "<<lastName<<" is: "<<fixed<<showpoint<<setprecision(1)<<gradeAverage<<endl; //when array solution is implemented the output variable will
     //simply be studentName
 
     cout<<"Here are your grades: "<<endl;
