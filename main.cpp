@@ -22,42 +22,47 @@ int main() {
 
     cout<<"What is your first and last name: ";
     getline(cin, studentName);
+    cout<<endl;
     //one line code to get the entire line: getline(cin, studentName);
 
 
 
-    cout<<"Enter first assignment name: ";
+    cout<<"Enter assignment name 1: ";
     getline(cin, assignmentName[0]);
 
-    cout<<"Enter second assignment name: ";
+    cout<<"Enter assignment name 2: ";
     getline(cin, assignmentName[1]);
 
-    cout<<"Enter third assignment name: ";
+    cout<<"Enter assignment name 3: ";
     getline(cin, assignmentName[2]);
 
+    cout << endl << endl;
 
 
-    cout<<"Enter first grade: ";   //These are the iostreams that prompt the user to enter their grades in
+    cout<<"Enter grade for " << assignmentName[0] <<" : ";   //These are the iostreams that prompt the user to enter their grades in
     cin>>grades[0];               //The grades must be entered in as integers, needs a more descriptive prompt
 
-    cout<<"Enter second grade: ";
+    cout<<"Enter grade for " << assignmentName[1] <<" : ";
     cin>>grades[1];
 
-    cout<<"Enter third grade: ";
+    cout<<"Enter grade " << assignmentName[2] <<" : ";
     cin>>grades[2];
+
+    cout << endl << endl;
 
     //one line code that will get the grades from a single line: getline(cin, grades);
 
-    gradeAverage = (grades[0] + static_cast<double>(grades[1])+grades[2])/(3.0); //Average expression, static type cast
+    gradeAverage = (grades[0] + static_cast<double>(grades[1])+grades[2])/ static_cast<double>(NUM_ASSIGNMENT); //Average expression, static type cast
     //as extra redundancy to ensure the data type gets converted to a double
 
-    cout<<"The average for "<<studentName<<" "<<"is: "<<fixed<<showpoint<<setprecision(1)<<gradeAverage<<endl; //when array solution is implemented the output variable will
+    cout<<"The average for "<<studentName<<" "<<"is "<<fixed<<showpoint<<setprecision(1)<<gradeAverage<<endl; //when array solution is implemented the output variable will
     //simply be studentName
 
-    cout<<"Here are your grades: "<<endl;
-    cout<<assignmentName[0]<<": "<<firstGrade<<endl;
-    cout<<assignmentName[1]<<": "<<secondGrade<<endl;
-    cout<<assignmentName[2]<<": "<<thirdGrade<<endl;
+    cout<<"\nHere are your grades: "<<endl;
+
+    cout<<setw(10)<<right<<assignmentName[0]<<": "<< setw(5) << right<<grades[0]<<endl;
+    cout<<setw(10)<<right<<assignmentName[1]<<": "<< setw(5) << right<<grades[1]<<endl;
+    cout<<setw(10)<<right<<assignmentName[2]<<": "<< setw(5) << right<<grades[2]<<endl;
     cout<<endl<<endl;
     cout<<"Thank you for playing. ";
 
