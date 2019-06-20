@@ -59,6 +59,7 @@ int main() {
 
     gradeAverage = (grades[0] + static_cast<double>(grades[1])+grades[2])/ static_cast<double>(NUM_ASSIGNMENT); //Average expression, static type cast
     //as extra redundancy to ensure the data type gets converted to a double
+    //Dividing by the global constant allows us to only have to change the variable value in one location
 
     cout<<"The average for "<<studentName<<" "<<"is "<<fixed<<showpoint<<setprecision(1)<<gradeAverage<<endl;
     //when array solution is implemented the output variable will
