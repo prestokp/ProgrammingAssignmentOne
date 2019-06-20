@@ -5,8 +5,11 @@
 #include <string>
 using namespace std;
 
+//global variables that are constants
 const int NUM_ASSIGNMENT = 3;
 const int GRADE_NUMBER = 3;
+
+
 int main() {
 
     double gradeAverage;   //this code block defines all of the variables that will be used throughout the program
@@ -26,7 +29,8 @@ int main() {
     //one line code to get the entire line: getline(cin, studentName);
 
 
-
+    //Captures the name of the assignment via getline
+    //names can have spaces in their strings which can affect the capture when using a regular cin method
     cout<<"Enter assignment name 1: ";
     getline(cin, assignmentName[0]);
 
@@ -42,7 +46,8 @@ int main() {
     cout<<"Enter grade for " << assignmentName[0] <<" : ";   //These are the iostreams that prompt the user to enter their grades in
     cin>>grades[0];               //The grades must be entered in as integers, needs a more descriptive prompt
 
-    cout<<"Enter grade for " << assignmentName[1] <<" : ";
+    cout<<"Enter grade for " << assignmentName[1] <<" : ";   //grades is an array so simply changing the indices refers to a different
+                                                             //integer
     cin>>grades[1];
 
     cout<<"Enter grade " << assignmentName[2] <<" : ";
@@ -55,14 +60,18 @@ int main() {
     gradeAverage = (grades[0] + static_cast<double>(grades[1])+grades[2])/ static_cast<double>(NUM_ASSIGNMENT); //Average expression, static type cast
     //as extra redundancy to ensure the data type gets converted to a double
 
-    cout<<"The average for "<<studentName<<" "<<"is "<<fixed<<showpoint<<setprecision(1)<<gradeAverage<<endl; //when array solution is implemented the output variable will
+    cout<<"The average for "<<studentName<<" "<<"is "<<fixed<<showpoint<<setprecision(1)<<gradeAverage<<endl;
+    //when array solution is implemented the output variable will
     //simply be studentName
 
+    //table header
     cout<<"\nHere are your grades: "<<endl;
 
-    cout<<setw(10)<<right<<assignmentName[0]<<": "<< setw(5) << right<<grades[0]<<endl;
-    cout<<setw(10)<<right<<assignmentName[1]<<": "<< setw(5) << right<<grades[1]<<endl;
-    cout<<setw(10)<<right<<assignmentName[2]<<": "<< setw(5) << right<<grades[2]<<endl;
+
+    //formats the output so that it appears orderly and in columns
+    cout<<setw(25)<<assignmentName[0]<<": "<< setw(4) << right<<grades[0]<<endl;
+    cout<<setw(25)<<assignmentName[1]<<": "<< setw(4) << right<<grades[1]<<endl;
+    cout<<setw(25)<<assignmentName[2]<<": "<< setw(4) << right<<grades[2]<<endl;
     cout<<endl<<endl;
     cout<<"Thank you for playing. ";
 
